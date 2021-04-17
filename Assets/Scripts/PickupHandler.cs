@@ -34,6 +34,8 @@ public class PickupHandler : Singleton<PickupHandler>
                 }
 
                 var pickupable = raycastTarget.GetComponent<IPickupable>();
+                var clickable = raycastTarget.GetComponent<IClickable>();
+
 
                 if (pickupable != null)
                 {
@@ -42,8 +44,7 @@ public class PickupHandler : Singleton<PickupHandler>
                 }
                 else
                 {
-                    var clickable = raycastTarget.GetComponent<IClickable>();
-                    clickable?.Click();
+	                clickable?.Click();
                 }
             }
         }
