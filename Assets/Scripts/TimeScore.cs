@@ -39,7 +39,8 @@ public class TimeScore : MonoBehaviour
 	private void OnCollectedAllGoblins()
 	{
 		StopCoroutine(timeTracker);
-		Score.Instance.Add(timeScore);
+
+		Score.Instance.Add(Mathf.Clamp(timeScore, 0, maxScore));
 	}
 
 }
