@@ -10,10 +10,14 @@ public class Goblin : MonoBehaviour, IExplodingElement, IClickable
     [SerializeField]
     GameObject destroyedGoblin;
 
+    [SerializeField] private int scoreOnCollect;
+    [SerializeField] private int scoreOnExplode;
+
     [Button]
     void Collect ()
     {
         BombsAndGoblinsTracker.Instance.AddGoblin();
+        Score.Instance.Add(scoreOnCollect);
         Destroy(gameObject);
     }
 
@@ -23,6 +27,8 @@ public class Goblin : MonoBehaviour, IExplodingElement, IClickable
 
         if (destroyedGoblin != null)
             Instantiate(destroyedGoblin, transform.position, Quaternion.identity);
+
+        Score.Instance.Add(scoreOnExplode);
 
         Destroy(gameObject);
     }

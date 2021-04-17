@@ -6289,7 +6289,7 @@ GameObject:
   - component: {fileID: 1461153685}
   - component: {fileID: 1461153684}
   - component: {fileID: 1461153683}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: AreaToEnterWithBomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}

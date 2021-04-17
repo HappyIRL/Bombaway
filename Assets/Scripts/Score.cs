@@ -10,9 +10,12 @@ public class Score : Singleton<Score>
 
     public int Amount { get => currentScore; }
 
-
     public void Add(int amount)
     {
+	    int x = amount / 10;
+
+	    amount = x * 10;
+
         currentScore += amount;
     }
 
